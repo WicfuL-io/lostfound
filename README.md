@@ -67,3 +67,352 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - json (enabled by default - don't turn it off)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+
+
+
+
+# 🎒 Lost & Found Kampus
+
+Sistem informasi **Lost & Found Kampus** berbasis **CodeIgniter 4** yang memudahkan mahasiswa melaporkan barang hilang, barang ditemukan, serta melakukan klaim kepemilikan barang.
+
+---
+
+## ✨ Fitur
+
+- 🔐 Login & Register
+- 👤 Manajemen Profil
+- 📦 Lapor Barang Hilang
+- 📦 Lapor Barang Ditemukan
+- 🖼 Upload Foto Barang
+- 📂 Kategori Barang
+- 🔍 Pencarian & Filter Barang
+- 📱 Hubungi Pelapor via WhatsApp
+- 📩 Notifikasi
+- 🤝 Klaim Kepemilikan Barang
+- ✅ Verifikasi Klaim
+- 👨‍💼 Dashboard Admin
+- 📊 Statistik Barang
+
+---
+
+# 📋 Persyaratan
+
+Pastikan komputer sudah terinstall:
+
+- PHP 8.1 atau lebih baru
+- Composer
+- MySQL / MariaDB
+- XAMPP / Laragon
+- Git
+
+Cek versi:
+
+```bash
+php -v
+composer -V
+git --version
+```
+
+---
+
+# 📥 Clone Repository
+
+```bash
+git clone https://github.com/USERNAME/NAMA_REPOSITORY.git
+```
+
+Masuk ke folder project
+
+```bash
+cd NAMA_REPOSITORY
+```
+
+---
+
+# 📦 Install Dependency
+
+Install semua package Composer.
+
+```bash
+composer install
+```
+
+Tunggu hingga proses selesai.
+
+---
+
+# ⚙️ Konfigurasi Environment
+
+Salin file:
+
+```text
+env
+```
+
+menjadi
+
+```text
+.env
+```
+
+atau gunakan:
+
+```bash
+cp env .env
+```
+
+Jika menggunakan Windows:
+
+```bash
+copy env .env
+```
+
+---
+
+# 🗄 Konfigurasi Database
+
+Buka file
+
+```text
+.env
+```
+
+Ubah bagian berikut sesuai database Anda.
+
+```ini
+CI_ENVIRONMENT = development
+
+database.default.hostname = localhost
+database.default.database = lostfound
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
+database.default.port = 3306
+```
+
+---
+
+# 📁 Buat Database
+
+Masuk ke phpMyAdmin kemudian buat database baru.
+
+Nama database:
+
+```text
+lostfound
+```
+
+---
+
+# 🚀 Jalankan Migration
+
+```bash
+php spark migrate
+```
+
+Jika berhasil akan muncul:
+
+```text
+Running all new migrations...
+Done.
+```
+
+---
+
+# 🌱 Jalankan Seeder (Jika Ada)
+
+Jika project menggunakan seeder.
+
+Lihat daftar seeder:
+
+```bash
+php spark
+```
+
+Jalankan:
+
+```bash
+php spark db:seed NamaSeeder
+```
+
+Contoh:
+
+```bash
+php spark db:seed UserSeeder
+```
+
+---
+
+# 📂 Folder Upload
+
+Pastikan folder berikut sudah tersedia.
+
+```
+public/
+└── uploads/
+    ├── barang/
+    ├── claim/
+    ├── profile/
+    └── qr/
+```
+
+Jika belum ada, buat secara manual.
+
+---
+
+# 🔑 Beri Permission Folder
+
+Linux / Mac
+
+```bash
+chmod -R 775 writable
+chmod -R 775 public/uploads
+```
+
+Windows (XAMPP)
+
+Pastikan folder dapat ditulis (Writable).
+
+---
+
+# ▶ Menjalankan Project
+
+Menggunakan server bawaan CodeIgniter.
+
+```bash
+php spark serve
+```
+
+Akses melalui browser.
+
+```
+http://localhost:8080
+```
+
+Atau jika menggunakan XAMPP.
+
+```
+http://localhost/lostfound/public
+```
+
+---
+
+# 👤 Akun Default (Opsional)
+
+Jika menggunakan Seeder.
+
+### Admin
+
+```
+Email    : admin@kampus.ac.id
+Password : password
+```
+
+### Mahasiswa
+
+```
+Email    : mahasiswa@kampus.ac.id
+Password : password
+```
+
+---
+
+# 📂 Struktur Folder
+
+```
+app/
+├── Controllers/
+├── Models/
+├── Views/
+├── Database/
+│   ├── Migrations/
+│   └── Seeds/
+
+public/
+├── uploads/
+│   ├── barang/
+│   ├── claim/
+│   ├── profile/
+│   └── qr/
+
+writable/
+```
+
+---
+
+# 🛠 Teknologi
+
+- CodeIgniter 4
+- PHP 8+
+- MySQL
+- Bootstrap 5
+- Composer
+- JavaScript
+- HTML5
+- CSS3
+
+---
+
+# 📸 Screenshot
+
+Tambahkan screenshot aplikasi pada folder:
+
+```
+docs/
+```
+
+Contoh:
+
+```
+docs/
+├── dashboard.png
+├── login.png
+├── barang.png
+├── detail.png
+```
+
+Kemudian tampilkan:
+
+```md
+## Login
+
+![Login](docs/login.png)
+
+## Dashboard
+
+![Dashboard](docs/dashboard.png)
+```
+
+---
+
+# 🤝 Kontribusi
+
+1. Fork repository.
+2. Buat branch baru.
+
+```bash
+git checkout -b fitur-baru
+```
+
+3. Commit perubahan.
+
+```bash
+git commit -m "Menambahkan fitur baru"
+```
+
+4. Push.
+
+```bash
+git push origin fitur-baru
+```
+
+5. Buat Pull Request.
+
+---
+
+# 📄 Lisensi
+
+Project ini dibuat untuk keperluan pembelajaran dan pengembangan sistem Lost & Found Kampus.
+
+Silakan digunakan dan dikembangkan sesuai kebutuhan.
